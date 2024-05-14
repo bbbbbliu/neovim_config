@@ -6,7 +6,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 local term_opts = { silent = true }
 
--- NeoTree -- 
+-- NeoTree --
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -21,9 +21,8 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
-keymap("n", "<leader>x", ":wq<CR>", opts)
-keymap("n", "<leader>w", ":w<CR>", opts)
-
+vim.keymap.set("n", "<leader>x", ":wq<CR>", {})
+vim.keymap.set("n", "<leader>w", ":w<CR>", {})
 -- FileTree --
 keymap("n", "<leader>f", ":Neotree filesystem reveal left<CR>")
 -- Resize with arrows
@@ -37,7 +36,7 @@ keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Insert --
--- Press jk fast to exit insert mode 
+-- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 keymap("i", "jj", "<ESC>", opts)
